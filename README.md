@@ -1,103 +1,58 @@
-# 🧠 Squat Posture Classification Dataset
+# 🧠 Application of YOLO–MediaPipe Based Deep Learning for Detection and Correction of Incorrect Squat Posture
 
-📘 **DOI:** [10.5281/zenodo.17558629](https://doi.org/10.5281/zenodo.17558629)  
-📅 **Version:** 1.0  
-📂 **Resource Type:** Dataset  
-👤 **Author:** Christopher William  
+This repository contains the implementation and supporting materials for the research titled  
+**“Application of YOLO–MediaPipe Based Deep Learning for Detection and Correction of Incorrect Squat Posture.”**
 
----
-
-## 📖 Overview
-This dataset was developed to support research on **Application of YOLO–MediaPipe Based Deep Learning for Detection and Correction of Incorrect Squat Posture**.  
-It contains **side-view images** of individuals performing squats categorized into three classes:
-- 🟩 **Good** – Correct squat posture  
-- 🟥 **Bad Back** – Incorrect spinal alignment  
-- 🟨 **Bad Heel** – Heel elevation or foot instability  
-
-Each image is formatted in a **1:1 aspect ratio** to maintain consistency during preprocessing and pose estimation.
-
-The dataset was used in research comparing **MediaPipe** and **YOLOv8-Pose** for keypoint extraction, and in evaluating ensemble classifiers such as **LightGBM**, **Random Forest**, and **Bagging** for accurate squat posture classification.
+The project focuses on developing an intelligent system that combines **pose estimation** and **ensemble learning** to automatically detect and classify squat posture accuracy.  
+The system extracts body keypoints and computes biomechanical angles from side-view images using **MediaPipe** and **YOLOv8-Pose**, then classifies them into three posture categories:  
+**Good**, **Bad Back**, and **Bad Heel**.
 
 ---
 
-## 🧩 Dataset Structure
+## ⚙️ Key Features
+- Integration of **MediaPipe** and **YOLOv8** for human pose estimation.  
+- Extraction of **biomechanical angles** (hip, knee, and back) for feature enhancement.  
+- Implementation of **ensemble learning algorithms**: LightGBM, Random Forest, and Bagging.  
+- Evaluation based on **accuracy, precision, recall, and F1-score** metrics.  
+- Application of **SMOTE** for class balancing to improve fairness in training.
+
+---
+
+## 📊 Research Results
+| Classifier | Accuracy | Notes |
+|-------------|-----------|-------|
+| **LightGBM** | 91.82% | Highest performance with MediaPipe keypoints |
+| **Random Forest** | 90.78% | Strong generalization and stable results |
+| **Bagging** | 86.46% | Better recall for minority (Bad Heel) class |
+
+---
+
+## 📂 Repository Structure
 ```
-Dataset/
-├── train/
-│ ├── Good/
-│ │ ├── Good_001.jpg
-│ │ ├── Good_002.jpg
-│ │ └── ...
-│ │
-│ ├── Bad_Back/
-│ │ ├── Bad_Back_001.jpg
-│ │ ├── Bad_Back_002.jpg
-│ │ └── ...
-│ │
-│ └── Bad_Heel/
-│ ├── Bad_Heel_001.jpg
-│ ├── Bad_Heel_002.jpg
-│ └── ...
-│
-└── test/
-│ ├── Good/
-│ │ ├── Good_001.jpg
-│ │ ├── Good_002.jpg
-│ │ └── ...
-│ │
-│ ├── Bad_Back/
-│ │ ├── Bad_Back_001.jpg
-│ │ ├── Bad_Back_002.jpg
-│ │ └── ...
-│ │
-│ └── Bad_Heel/
-│ ├── Bad_Heel_001.jpg
-│ ├── Bad_Heel_002.jpg
-│ └── ...
+/code/ → Model training, preprocessing, and pose estimation scripts
+/dataset/ → Dataset description and download link
+/README.md → Project overview (this file)
 ```
 
-Each folder represents a **posture category**, with side-view squat images saved in `.jpg` format.
+---
+
+## 📦 Dataset
+The dataset used in this study is publicly available on **Zenodo**:  
+📘 **DOI:** [10.5281/zenodo.17558629](https://doi.org/10.5281/zenodo.17558629)
+
+It contains side-view squat images labeled as *Good*, *Bad Back*, and *Bad Heel*,  
+formatted in a 1:1 aspect ratio for pose estimation experiments.
 
 ---
 
-## ⚙️ Technical Details
-- **Image Format:** JPG  
-- **Aspect Ratio:** 1:1  
-- **Viewpoint:** Side-view  
-- **Pose Estimation Frameworks:** MediaPipe, YOLOv8-Pose  
-- **Classifiers Evaluated:** LightGBM, Random Forest, Bagging  
-- **Preprocessing:** Data normalization, augmentation (flip, rotation, brightness, contrast), and SMOTE balancing for minority classes  
+## 🧠 Citation
+> Christopher William. (2025). *Application of YOLO–MediaPipe Based Deep Learning for Detection and Correction of Incorrect Squat Posture.*
+
+Dataset: [https://doi.org/10.5281/zenodo.17558629](https://doi.org/10.5281/zenodo.17558629)
 
 ---
 
-## 🧪 Research Context
-The dataset was used in the study *“Deep Learning–Based Squat Posture Classification using MediaPipe and YOLOv8”*, focusing on biomechanical feature extraction and ensemble learning for fitness posture analysis.  
-Experimental results showed that:
-- **LightGBM** achieved the highest accuracy (**91.82%**) using MediaPipe keypoints.  
-- **Random Forest** provided strong generalization with balanced precision and recall.  
-- **Bagging** offered higher recall for minority classes, particularly for *Bad Heel* detection.  
-
----
-
-## 🧑‍💻 Recommended Use
-This dataset is suitable for:
-- Pose estimation and human keypoint detection  
-- Exercise posture classification research  
-- Real-time movement correction systems  
-- Fitness technology and sports analytics  
-
----
-
-## ⚖️ License and Citation
-This dataset is released under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.  
-You are free to use, share, and adapt the dataset with appropriate credit to the author.
-
-### **Citation**
-> Christopher William. (2025). *Application of YOLO–MediaPipe Based Deep Learning for Detection and Correction of Incorrect Squat Posture* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.17558629](https://doi.org/10.5281/zenodo.17558629)
-
----
-
-## 🤝 Contributions and Contact
-Contributions, feedback, or collaboration inquiries are welcome.  
-For questions, please contact:  
+## 🤝 Contact
+For questions, collaboration, or feedback, please contact:  
 📧 **christopher.teng@binus.ac.id**
+
