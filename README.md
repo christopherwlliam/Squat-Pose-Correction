@@ -21,6 +21,7 @@ The dataset was used in research comparing **MediaPipe** and **YOLOv8-Pose** for
 ---
 
 ## 🧩 Dataset Structure
+```
 Dataset/
 │
 ├── train/
@@ -54,6 +55,7 @@ Dataset/
 ├── Bad_Heel_001.jpg
 ├── Bad_Heel_002.jpg
 └── ...
+```
 
 Each folder represents a **posture category**, with side-view squat images saved in `.jpg` format.
 
